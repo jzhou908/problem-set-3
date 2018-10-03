@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * INSTRUCTIONS.
  * 
@@ -20,14 +22,25 @@
  */
 
 public class ProblemSet3 {
-	
+	static Scanner in = new Scanner(System.in);
 	/**
 	 * Make sure you're testing your code by calling your methods
 	 * from the main method!
 	 */
 	
 	public static void main(String[] args) {
-			
+			ProblemSet3 ps3 =  new ProblemSet3();
+			ps3.dateFashion(5, 10);
+			ps3.fizzString("a");
+			ps3.squirrelPlay(65, true);
+			ps3.fizzStringAgain(3);
+			ps3.makeBricks(1, 1, 5);
+			ps3.loneSum(1, 1, 1);
+			ps3.luckySum(1, 1, 1);
+			ps3.factorialFor(1);
+			ps3.factorialWhile(1);
+			ps3.isPrime(2);
+			in.close();
 	}
 	
 	/*
@@ -47,6 +60,20 @@ public class ProblemSet3 {
 	 */
 	
 	public void dateFashion(int you, int date) {
+		System.out.println("What is your stylishness from 1-10?");
+		you = in.nextInt();
+		System.out.println("What is your date's stylishness from 1-10?");
+		date = in.nextInt();
+		in.nextLine();
+		if (you <= 2 || date <= 2) {
+			System.out.println("NO");
+		}
+		else if (you >= 8 || date >= 8) {
+			System.out.println("YES");
+		}
+		else {
+			System.out.println("MAYBE");
+		}
 		
 	}
 	
@@ -62,7 +89,20 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzString(String str) {
-		
+		System.out.println("Enter a string that starts with f or ends with b or both.");
+		str = in.nextLine(); 
+		if (str.charAt(0) == 'f') {
+			if(str.charAt(str.length()-1) == 'b')
+			System.out.println("FIZZBUZZ");
+			else {
+				System.out.println("FIZZ");
+			}}
+		else if(str.charAt(str.length()-1) == 'b') {
+			System.out.println("BUZZ");
+		}
+		else {
+			System.out.println(str);
+		}
 	}
 	
 	/*
@@ -78,7 +118,27 @@ public class ProblemSet3 {
 	 */
 	
 	public void squirrelPlay(int temp, boolean isSummer) {
-		
+		System.out.println("What is the temperature?");
+		temp = in.nextInt();
+		System.out.println("Is it summer? (true or false)");
+		isSummer = in.nextBoolean();
+		if (temp < 60) {
+			System.out.println("NO");
+		}
+		else if (isSummer == true) {
+			if (temp <= 100) {
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
+		else if (temp > 90) {
+			System.out.println("NO");
+		}
+		else {
+			System.out.println("YES");
+		}
 	}
 	
 	/*
@@ -93,7 +153,20 @@ public class ProblemSet3 {
 	 */
 	
 	public void fizzStringAgain(int n) {
-		
+		System.out.println("Enter a number");
+		n = in.nextInt(); 
+		if (n%3 == 0) {
+			if(n%5 == 0)
+			System.out.println("FIZZBUZZ");
+			else {
+				System.out.println("FIZZ");
+			}}
+		else if(n%5 == 0) {
+			System.out.println("BUZZ");
+		}
+		else {
+			System.out.println(n + "!");
+		}
 	}
 	
 	/*
@@ -108,7 +181,36 @@ public class ProblemSet3 {
 	 */
 	
 	public void makeBricks(int small, int big, int goal) {
-		
+		System.out.println("How many small bricks are there?");
+		small = in.nextInt();
+		System.out.println("How many big bricks are there?");
+		big = in.nextInt();
+		System.out.println("What is the goal?");
+		goal = in.nextInt();
+		if (small >= goal){
+			System.out.println("YES");
+		}
+		else if(goal%5 == 0) {
+			if(big >= goal/5){
+				System.out.println("YES");
+			}
+			else if (big*5 + small >= goal){
+				System.out.println("YES");
+			}
+			else {
+				System.out.println("NO");
+			}
+		}
+		else if(small >= goal%5 && big >= goal/5){
+			System.out.println("YES");
+		}
+		else if(goal <= big*5 + small && goal%5 <= small){
+			System.out.println("YES");
+		} 
+		else {
+			System.out.println("NO");
+		}
+
 	}
 	
 	/*
@@ -121,7 +223,33 @@ public class ProblemSet3 {
 	 */
 	
 	public void loneSum(int a, int b, int c) {
-		
+		System.out.println("What is the first value?");
+		a = in.nextInt();
+		System.out.println("What is the second value?");
+		b = in.nextInt();
+		System.out.println("What is the third value?");
+		c= in.nextInt();
+		if (a != b) {
+			if (b != c) {
+				if (c != a) {
+					System.out.println("Sum: "+ a + b + c);
+				}
+				else {
+					System.out.println(b);
+				}}
+			else if(c != a) {
+				System.out.println(a);
+			}
+			else {
+				System.out.println(0);
+			}
+		}
+		else if (a != c) {
+			System.out.println(c);
+		}
+		else {
+			System.out.println(0);
+		}
 	}
 	
 	/*
@@ -135,7 +263,29 @@ public class ProblemSet3 {
 	 */
 	
 	public void luckySum(int a, int b, int c) {
-		
+		System.out.println("What is the first value?");
+		a = in.nextInt();
+		System.out.println("What is the second value?");
+		b = in.nextInt();
+		System.out.println("What is the third value?");
+		c= in.nextInt();
+		if (a == 13) {
+			if(b == 13) {
+				System.out.println(0);
+			}
+			else {
+				System.out.println(c);
+			}
+		}
+		else if (b == 13) {
+			System.out.println(a);
+		}
+		else if (c == 13) {
+			System.out.println(a + b);
+		}
+		else {
+			System.out.println(a + b + c);
+		}
 	}
 	
 	/*
@@ -148,7 +298,15 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialFor(int n) {
-		
+		System.out.println("Pick a number");
+		n = in.nextInt();
+		int a = 1;
+		int factorial = 1;
+		for (; a <= n; a++) {
+			factorial = factorial * a;
+		}
+		System.out.println(factorial);
+
 	}
 	
 	/*
@@ -162,7 +320,16 @@ public class ProblemSet3 {
 	 */
 	
 	public void factorialWhile(int n) {
-		
+		System.out.println("Pick a number");
+		n = in.nextInt();
+		int a = 1;
+		int factorial = 1;
+		while (a <= n) {
+			factorial = factorial * a;
+			a++;
+			}
+		System.out.println(factorial);
+
 	}
 	
 	/*
@@ -175,6 +342,18 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
-		
+		System.out.println("Pick a number");
+		n = in.nextInt();
+		if (n < 2) {
+			System.out.println("NOT PRIME");
+		}
+		for (int a = 2; a < n; a++){
+			if(n % a == 0) {
+				System.out.println("NOT PRIME");
+				return;
+			}
+		} 
+		System.out.println("PRIME");
+
 	}
 }
