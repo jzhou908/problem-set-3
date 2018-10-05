@@ -232,7 +232,7 @@ public class ProblemSet3 {
 		if (a != b) {
 			if (b != c) {
 				if (c != a) {
-					System.out.println("Sum: "+ a + b + c);
+					System.out.println(a + b + c);
 				}
 				else {
 					System.out.println(b);
