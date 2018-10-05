@@ -66,13 +66,13 @@ public class ProblemSet3 {
 		date = in.nextInt();
 		in.nextLine();
 		if (you <= 2 || date <= 2) {
-			System.out.println("NO");
+			System.out.println("NO.");
 		}
 		else if (you >= 8 || date >= 8) {
-			System.out.println("YES");
+			System.out.println("YES.");
 		}
 		else {
-			System.out.println("MAYBE");
+			System.out.println("MAYBE.");
 		}
 		
 	}
@@ -93,15 +93,15 @@ public class ProblemSet3 {
 		str = in.nextLine(); 
 		if (str.charAt(0) == 'f') {
 			if(str.charAt(str.length()-1) == 'b')
-			System.out.println("FIZZBUZZ");
+			System.out.println("FIZZBUZZ!");
 			else {
-				System.out.println("FIZZ");
+				System.out.println("FIZZ!");
 			}}
 		else if(str.charAt(str.length()-1) == 'b') {
-			System.out.println("BUZZ");
+			System.out.println("BUZZ!");
 		}
 		else {
-			System.out.println(str);
+			System.out.println(str = "!");
 		}
 	}
 	
@@ -123,21 +123,21 @@ public class ProblemSet3 {
 		System.out.println("Is it summer? (true or false)");
 		isSummer = in.nextBoolean();
 		if (temp < 60) {
-			System.out.println("NO");
+			System.out.println("NO.");
 		}
 		else if (isSummer == true) {
 			if (temp <= 100) {
-				System.out.println("YES");
+				System.out.println("YES.");
 			}
 			else {
-				System.out.println("NO");
+				System.out.println("NO.");
 			}
 		}
 		else if (temp > 90) {
-			System.out.println("NO");
+			System.out.println("NO.");
 		}
 		else {
-			System.out.println("YES");
+			System.out.println("YES.");
 		}
 	}
 	
@@ -157,12 +157,12 @@ public class ProblemSet3 {
 		n = in.nextInt(); 
 		if (n%3 == 0) {
 			if(n%5 == 0)
-			System.out.println("FIZZBUZZ");
+			System.out.println("FIZZBUZZ!");
 			else {
-				System.out.println("FIZZ");
+				System.out.println("FIZZ!");
 			}}
 		else if(n%5 == 0) {
-			System.out.println("BUZZ");
+			System.out.println("BUZZ!");
 		}
 		else {
 			System.out.println(n + "!");
@@ -188,27 +188,27 @@ public class ProblemSet3 {
 		System.out.println("What is the goal?");
 		goal = in.nextInt();
 		if (small >= goal){
-			System.out.println("YES");
+			System.out.println("YES.");
 		}
 		else if(goal%5 == 0) {
 			if(big >= goal/5){
-				System.out.println("YES");
+				System.out.println("YES.");
 			}
 			else if (big*5 + small >= goal){
-				System.out.println("YES");
+				System.out.println("YES.");
 			}
 			else {
-				System.out.println("NO");
+				System.out.println("NO.");
 			}
 		}
 		else if(small >= goal%5 && big >= goal/5){
-			System.out.println("YES");
+			System.out.println("YES.");
 		}
 		else if(goal <= big*5 + small && goal%5 <= small){
-			System.out.println("YES");
+			System.out.println("YES.");
 		} 
 		else {
-			System.out.println("NO");
+			System.out.println("NO.");
 		}
 
 	}
@@ -232,23 +232,24 @@ public class ProblemSet3 {
 		if (a != b) {
 			if (b != c) {
 				if (c != a) {
-					System.out.println(a + b + c);
+					int sum = a + b + c;
+					System.out.println(sum + ".");
 				}
 				else {
-					System.out.println(b);
+					System.out.println(b + ".");
 				}}
 			else if(c != a) {
-				System.out.println(a);
+				System.out.println(a + ".");
 			}
 			else {
-				System.out.println(0);
+				System.out.println(0 + ".");
 			}
 		}
 		else if (a != c) {
-			System.out.println(c);
+			System.out.println(c + ".");
 		}
 		else {
-			System.out.println(0);
+			System.out.println(0 + ".");
 		}
 	}
 	
@@ -271,20 +272,22 @@ public class ProblemSet3 {
 		c= in.nextInt();
 		if (a == 13) {
 			if(b == 13) {
-				System.out.println(0);
+				System.out.println(0 + ".");
 			}
 			else {
-				System.out.println(c);
+				System.out.println(c + ".");
 			}
 		}
 		else if (b == 13) {
-			System.out.println(a);
+			System.out.println(a + ".");
 		}
 		else if (c == 13) {
-			System.out.println(a + b);
+			int x = a + b;
+			System.out.println(x  + ".");
 		}
 		else {
-			System.out.println(a + b + c);
+			int y = a + b + c;
+			System.out.println(y + ".");
 		}
 	}
 	
@@ -305,7 +308,7 @@ public class ProblemSet3 {
 		for (; a <= n; a++) {
 			factorial = factorial * a;
 		}
-		System.out.println(factorial);
+		System.out.println(factorial + ".");
 
 	}
 	
@@ -328,7 +331,7 @@ public class ProblemSet3 {
 			factorial = factorial * a;
 			a++;
 			}
-		System.out.println(factorial);
+		System.out.println(factorial + ".");
 
 	}
 	
@@ -342,18 +345,18 @@ public class ProblemSet3 {
 	 */
 	
 	public void isPrime(int n) {
-		System.out.println("Pick a number");
+		System.out.println("Pick a number:");
 		n = in.nextInt();
 		if (n < 2) {
-			System.out.println("NOT PRIME");
+			System.out.println("NOT PRIME!");
 		}
 		for (int a = 2; a < n; a++){
 			if(n % a == 0) {
-				System.out.println("NOT PRIME");
+				System.out.println("NOT PRIME!");
 				return;
 			}
 		} 
-		System.out.println("PRIME");
+		System.out.println("PRIME!");
 
 	}
 }
